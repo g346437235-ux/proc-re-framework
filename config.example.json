@@ -1,0 +1,37 @@
+{
+  "_comment": "复制为 private.json 并填入你自己分析出的值。所有值都要靠你自己的抓包推出来，本文件不含任何真实常量。",
+
+  "ports": [12345],
+
+  "frame": {
+    "_comment": "帧头布局。header_len 是『长度字段之外的头字节数』；length_includes_self=true 表示 length 计入自身长度",
+    "header_len": 12,
+    "length_offset": 0,
+    "length_size": 4,
+    "endian": "big",
+    "length_includes_self": true,
+    "min_frame_len": 5,
+    "max_frame_len": 4194304
+  },
+
+  "codecs": [
+    {"type": "plain"},
+    {"type": "gzip"},
+    {"type": "zlib", "offset_scan": [0, 4]},
+    {"type": "deflate", "offset_scan": [0, 4, 6, 8]},
+    {"type": "xor", "key": null, "prefixes": ["[", "{"]},
+    {"type": "binary"}
+  ],
+
+  "tables": {
+    "_comment": "登录快照与增量各用哪个命令号，由你自己填",
+    "snapshot_cmd": null,
+    "update_cmd": null
+  },
+
+  "commands": {
+    "_comment": "命令号 → 语义的映射，自己填。示例用明显的占位值。",
+    "0x0A": "example_get_something",
+    "0x0B": "example_set_something"
+  }
+}

@@ -1,0 +1,28 @@
+# 忽略敏感与生成物
+private.json
+*.private.json
+*.pcap
+*.pcapng
+*.cap
+demo/
+out/
+out_*/
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 日志与临时
+*.log
+*.tmp
+~$*

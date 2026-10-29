@@ -1,0 +1,13 @@
+# 本框架只依赖 Python 标准库
+# Python >= 3.8
+#
+# 没有第三方依赖是刻意设计：
+#   1. 发布/分享时不需要装环境
+#   2. 不用为了一个 fnmatch 装 scapy
+#
+# 如果你需要更高级的 pcap 能力（如 IP 分片重组、TLS 解密），
+# 自行按需引入：
+#
+# scapy>=2.5      # 高级 pcap 操作
+# dpkt>=1.9       # 轻量 pcap 解析
+# cryptography    # TLS
